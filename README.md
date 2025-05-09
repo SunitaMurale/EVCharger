@@ -95,3 +95,47 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+------------------------------------------------------------------------------------------------------
+
+Libraries Used
+1. react-native-maps
+Interactive maps for React Native.
+
+npm install react-native-maps
+
+2. @react-native-community/geolocation
+Access native location services without using deprecated browser APIs.
+
+npm install @react-native-community/geolocation
+
+Map Tiles (Free)
+Use OpenStreetMap tiles via UrlTile in react-native-maps.
+
+Android Setup
+1. Add Permissions
+Open android/app/src/main/AndroidManifest.xml and add:
+
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.INTERNET" />
+
+<application
+  android:usesCleartextTraffic="true"
+  ...
+>
+
+Cleartext Traffic
+android:usesCleartextTraffic="true" allows loading map tiles over HTTP.
+
+Final Notes
+1.Rebuild your app using npx react-native run-android after changes.
+2.Ensure your emulator or device has location services enabled.
+3.Use provider={null} when using custom tiles like OpenStreetMap.
+
+ How to Run the Project
+ # 1. Install dependencies
+npm install
+
+# 2. Start the project
+npx react-native run-android
